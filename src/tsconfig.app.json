@@ -9,5 +9,9 @@
   "exclude": [
     "test.ts",
     "**/*.spec.ts"
+  ],
+  "types": [
+    "youtube-player",
+    "yt-player"
   ]
 }

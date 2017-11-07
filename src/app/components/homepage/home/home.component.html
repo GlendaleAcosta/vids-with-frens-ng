@@ -1,0 +1,23 @@
+<section>
+  <div class="container">
+      <div class="row hero-home">
+
+        <div class="col m10 offset-m1 s12 l10 offset-l1 center-align">
+          <h1 class="main-title white-text">Watch Videos with your Friends!</h1>
+          <p class="white-text sub-title">
+            Just create a room, copy the link, and send it to your friends.</p>
+          <button
+            (click)="show = true"
+            class="waves-effect waves-light btn-large"
+          >
+            Create a room
+          </button>
+        </div>
+
+      </div>
+  </div>
+</section>
+
+<app-create-room-modal (showModal)="showModal($event)" *ngIf="show">
+
+</app-create-room-modal>

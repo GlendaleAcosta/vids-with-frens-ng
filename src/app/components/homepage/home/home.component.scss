@@ -1,0 +1,43 @@
+// .hero-home-container {
+//   background-color: lightblue;
+// }
+section {
+  width: 100%;
+  // background: lightblue;
+  // background: linear-gradient(left top, #d23083, #f3693a);
+  // background: linear-gradient(-75deg, #d23083, #0d95ab);
+  background: linear-gradient(-75deg, #d23083, #0fcae8);
+  
+  // #d23083
+  // #f3693a
+  height: 520px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+.hero-home {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.main-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: inherit;
+  font-size: 2.8em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.sub-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3em;
+}
+
+// .show-modal {
+//   display: block;
+//   top: 10%;
+// }

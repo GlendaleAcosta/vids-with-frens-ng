@@ -1,0 +1,32 @@
+<div class="modal-container">
+  <div class="modal custom-modal">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="modal-content">
+      <h4>Please choose a name or login.</h4>
+        
+      <div class="row">
+        <div class="col s12">
+            <div class="input-field col s12">
+              <input placeholder="John Snow" name="guestName" ngModel required #guestName="ngModel" type="text" class="validate">
+              <label class="active" for="guestName">Guest Name</label>
+            </div>
+          </div>
+      </div>
+
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="modal-action modal-close waves-effect waves-green btn-flat"
+        >
+          Agree
+        </button>
+        <button
+        class="modal-action modal-close waves-effect waves-green btn-flat"
+      >
+        Login
+      </button>
+      </div>
+    </form>
+  </div>
+
+  <div (click)="closeModal()" class="modal-black-bg"> </div> 
+</div>
