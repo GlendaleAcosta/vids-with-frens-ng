@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "nodemon server/server.js",
-    "start": "ng serve --proxy-config proxy.conf.json --port 4201"
+    "client": "ng serve --proxy-config proxy.conf.json --port 4201",
+    "start": "ng build && node server/server.js"
   },
   "private": true,
   "dependencies": {
