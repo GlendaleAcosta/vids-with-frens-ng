@@ -24,6 +24,7 @@ export class VideoSidebarComponent implements OnInit {
         const videos = res.items;
         this.videos = videos;
       })
+      f.reset();
     }
   }
 
