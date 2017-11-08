@@ -2,6 +2,7 @@
   "name": "vids-with-frens-ng",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server/server.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build",
@@ -11,11 +12,12 @@
     "server": "nodemon server/server.js",
     "client": "ng serve --proxy-config proxy.conf.json --port 4201",
     "start": "node server/server.js",
-    "postinstall": "ng build"
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
     "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.2.4",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
@@ -38,7 +40,6 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
