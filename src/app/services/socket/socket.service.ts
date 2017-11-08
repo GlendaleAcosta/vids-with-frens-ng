@@ -21,7 +21,7 @@ export class SocketService {
   }
 
   joinRoom(roomId) {
-    this.socket = io('http://localhost:3201', {query: {roomId}});
+    this.socket = io('/', {query: {roomId}});
     this.socket.on('current video', (videoId) => {
       this.videoSrc.next(videoId);
     });
