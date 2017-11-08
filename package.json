@@ -12,7 +12,7 @@
     "client": "ng serve --proxy-config proxy.conf.json --port 4201",
     "start": "node server/server.js"
   },
-  "postinstall": "ng build --aot -prod",
+  "postinstall": "ng build",
   "private": true,
   "dependencies": {
     "@angular/cli": "1.4.9",
