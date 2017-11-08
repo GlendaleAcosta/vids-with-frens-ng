@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { VideoSearchService } from '../../../services/videoSearch/video-search.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SocketService } from '../../../services/socket/socket.service';
-import * as YouTubePlayer from 'youtube-player';
 import * as YTPlayer from 'yt-player';
 
 @Component({
