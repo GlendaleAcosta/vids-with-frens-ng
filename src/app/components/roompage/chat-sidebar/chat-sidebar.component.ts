@@ -9,6 +9,7 @@ import { SocketService } from '../../../services/socket/socket.service';
 })
 export class ChatSidebarComponent implements OnInit {
   messages = [];
+  show = false;
   constructor(private socket:SocketService) { }
 
   ngOnInit() {
@@ -26,6 +27,12 @@ export class ChatSidebarComponent implements OnInit {
       }
       this.socket.sendMessage(userSubmission);
       f.reset();
+    } else if (!username) {
+      this.showModal(true);
     }
+  }
+
+  showModal(close: boolean) {
+    this.show = close;
   }
 }

@@ -29,12 +29,17 @@ export class CreateRoomModalComponent implements OnInit {
       this.roomService.postRoom().subscribe(res => {
         // console.log(res);
         localStorage.setItem('username', guestName);
-        that.router.navigateByUrl(`/room/${res.roomId}`);
+        console.log(this.router.url)
+        console.log(this.router.url.slice(0,6));
+        console.log(this.router.url.slice(0,6) !== '/room/');
+        if (this.router.url.slice(0,6) !== '/room/') {
+          that.router.navigateByUrl(`/room/${res.roomId}`);
+        } else {
+          this.closeModal();
+        }
       });
-      // console.log(test);
       
     }
-    console.log(f.valid);
   }
 
 }

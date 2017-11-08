@@ -3,18 +3,20 @@
 }
 
 .chat-log {
-  height: 75%;
+  height: 80%;
   background-color: #1c6e86;
+  overflow: auto;
 }
 
 .chat-messenger {
-  height: 25%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   // justify-content: flex-end;
   text-align: right;
   // width: 100%;
+  padding-top: 10px;
 }
 
 .h-100 {
@@ -33,8 +35,20 @@ textarea {
   border: 1px solid #1c6e86;
   outline: #1c6e86;
   resize: none;
+  color: #fff;
 }
 
 button {
   width: 120px;
+}
+
+.message {
+  margin: 2px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+input {
+  color: #fff;
 }

@@ -4,7 +4,7 @@
     <form class="search-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="row">
         <div class="input-field">
-          <input placeholder="Search video..." name="query" ngModel required #query="ngModel" type="text" class="validate">
+          <input placeholder="Search video..." name="query" ngModel required #query="ngModel" type="text" class="validate" autocomplete="off">
         </div>
       </div>
     </form>

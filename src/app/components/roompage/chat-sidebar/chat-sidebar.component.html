@@ -1,10 +1,13 @@
 <div class="row h-100">
   <div class="col s12 chat-log">
-      <p *ngFor="let msg of messages">{{msg}}</p>
+      <p class="message" *ngFor="let msg of messages">{{msg}}</p>
   </div>
-  <form class="col s12 p-0 chat-messenger" #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <textarea name="message" ngModel required #message="ngModel" cols="30" rows="10"></textarea>
+  <form class="col s12 chat-messenger" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <!-- <input name="message" ngModel required #message="ngModel"></input> -->
+    <input placeholder="type message..." name="message" ngModel required #message="ngModel" type="text" class="validate" autocomplete="off">
     <button type="submit" class="waves-effect waves-light btn">Send Message</button>
   </form>
 
 </div>
+
+<app-create-room-modal (showModal)="showModal($event)" *ngIf="show"></app-create-room-modal>
