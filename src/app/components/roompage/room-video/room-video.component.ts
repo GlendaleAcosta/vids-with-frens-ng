@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { VideoSearchService } from '../../../services/videoSearch/video-search.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SocketService } from '../../../services/socket/socket.service';
@@ -21,12 +21,12 @@ export class RoomVideoComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private socket:SocketService
   ) {}
-  
+
   ngOnInit() {
     this.player = new YTPlayer('#playerid', {
       autoplay: false,
       width: '100%',
-      height: '420px',
+      height: '100%',
     })
   
     this.socket.currentVideo.subscribe(videoId => { 
@@ -64,7 +64,7 @@ export class RoomVideoComponent implements OnInit {
     this.socket.isVideoPlaying.subscribe(videoIsPlaying => {
       this.fromServer = videoIsPlaying.fromServer;
       const errorTime = this.player.getCurrentTime() - videoIsPlaying.time;
-
+      
       if (videoIsPlaying.playing) {
         if (errorTime < -0.3 || errorTime > 0.3) {
           this.player.seek(videoIsPlaying.time);

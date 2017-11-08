@@ -34,8 +34,7 @@ io.on('connection', function(socket){
   const roomId = socket.handshake.query.roomId;
   
   socket.join(roomId, (test) => {
-    
-    socket.emit('current video', videoIds[roomId] || 'fzQ6gRAEoy0');
+    socket.emit('current video', videoIds[roomId] || 'fzQ6gRAEoy0'); // shelter video
   })
 
   socket.on('chat message', function(msg){

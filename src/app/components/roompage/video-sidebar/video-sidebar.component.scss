@@ -1,10 +1,7 @@
 .plr-0 {
   padding-left: 0;
-  padding-right: 0; 
-}
-
-.search-bar {
-  background: darkslategray;
+  padding-right: 0;
+  position: relative; 
 }
 
 .card {
@@ -18,4 +15,29 @@
 .video-title {
   font-size: 12px;
   padding: 5px;
+  background: black;
 }
+
+.search-form {
+  background: darkslategray;
+  width: 100%;
+  top: 0;
+}
+
+.input-field {
+  margin-top: 5px;
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0;
+  font-size: 12px;
+  // margin-bottom: 5px;
+  color: #fff;
+
+  input {
+    margin-bottom: 5px;
+    // border: 0;
+  }
+}
+
+
