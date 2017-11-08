@@ -14,7 +14,8 @@ export class SocketService {
     time: 0,
   });
   isVideoPlaying = this.videoPlaying.asObservable();
-  
+  private messageSrc = new BehaviorSubject<String>(null);
+  message = this.messageSrc.asObservable();
   constructor() {
     
   }
@@ -32,6 +33,10 @@ export class SocketService {
       // console.log(`HOLT SHIT SOMEONE UPDATED THE TIME TO ${time}`);
       this.videoPlaying.next(videoStatus);
     });
+    this.socket.on('chat message', (chatline) => {
+      this.messageSrc.next(chatline);
+    })
+
   }
   
   changeVideo(videoId) {
@@ -45,4 +50,10 @@ export class SocketService {
   pauseVideo(time) {
     this.socket.emit('pause video', time);
   }
+
+  sendMessage(userSubmission) {
+    this.socket.emit('chat message', userSubmission);
+  }
+  
+
 }

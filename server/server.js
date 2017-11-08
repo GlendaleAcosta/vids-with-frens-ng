@@ -37,8 +37,9 @@ io.on('connection', function(socket){
     socket.emit('current video', videoIds[roomId] || 'fzQ6gRAEoy0'); // shelter video
   })
 
-  socket.on('chat message', function(msg){
-    console.log('message: ' + msg);
+  socket.on('chat message', (userSubmission) =>{
+    const chatline = `${userSubmission.username}: ${userSubmission.message}`;
+    io.to(roomId).emit('chat message', chatline);
   });
   
   socket.on('change video', (video, fn) => {

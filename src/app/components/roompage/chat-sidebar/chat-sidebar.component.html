@@ -1,9 +1,9 @@
 <div class="row h-100">
   <div class="col s12 chat-log">
-      <p>hello</p>
+      <p *ngFor="let msg of messages">{{msg}}</p>
   </div>
-  <form class="col s12 p-0 chat-messenger">
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+  <form class="col s12 p-0 chat-messenger" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <textarea name="message" ngModel required #message="ngModel" cols="30" rows="10"></textarea>
     <button type="submit" class="waves-effect waves-light btn">Send Message</button>
   </form>
 

@@ -22,11 +22,13 @@ export class CreateRoomModalComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    const guestname = f.value.guestname;
+    const guestName = f.value.guestName;
+    
     if (f.valid) {
       const that = this;
       this.roomService.postRoom().subscribe(res => {
         // console.log(res);
+        localStorage.setItem('username', guestName);
         that.router.navigateByUrl(`/room/${res.roomId}`);
       });
       // console.log(test);
